@@ -19,3 +19,5 @@ Main Library
 # run the app
 $ bundle install
 $ bundle exec ruby xero_app.rb
+
+Visit `http://localhost:4567/` and start exploring the code 🥳
