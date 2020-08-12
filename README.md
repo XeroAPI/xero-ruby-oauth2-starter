@@ -24,8 +24,7 @@ $ bundle exec ruby xero_app.rb
 
 Visit `http://localhost:4567/` and start exploring the code 🥳
 
-
-## Example Code
+## Sample getting started code
 Setting up and connecting to the XeroAPI with the `xero-ruby` SDK is simple
 
 ```ruby
@@ -53,5 +52,5 @@ end
 
 Checkout `xero_app.rb` for all the sample code you need to get started for your own app
 
-## App Walkthrough
+## App functionality
 ![walkthrough](./public/images/xero-ruby-getting-started.gif)
