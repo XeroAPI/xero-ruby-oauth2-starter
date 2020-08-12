@@ -42,16 +42,15 @@ get '/' do
   haml :home
 end
 
-get '/add-connection' do
-  @auth_url = xero_client.authorization_url
-  redirect to(@auth_url)
-end
-
 get '/auth/callback' do
   @token_set = xero_client.get_token_set_from_callback(params)
   session[:token_set] = @token_set
-  puts "SET session[:token_set]::::: #{session[:token_set]}"
   redirect to('/')
+end
+
+get '/add-connection' do
+  @auth_url = xero_client.authorization_url
+  redirect to(@auth_url)
 end
 
 get '/refresh-token' do
