@@ -1,0 +1,54 @@
+GIT
+  remote: https://github.com/sinatra/sinatra.git
+  revision: f57acefddade9710d7ca3c7a508d4484e90aacdd
+  specs:
+    rack-protection (2.1.0)
+      rack
+    sinatra (2.1.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
+      tilt (~> 2.0)
+    sinatra-contrib (2.1.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.1.0)
+      sinatra (= 2.1.0)
+      tilt (~> 2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dotenv (2.7.6)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
+    haml (5.1.2)
+      temple (>= 0.8.0)
+      tilt
+    json (2.3.1)
+    jwt (2.2.1)
+    multi_json (1.14.1)
+    multipart-post (2.1.1)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.3)
+    ruby2_keywords (0.0.2)
+    temple (0.8.2)
+    tilt (2.0.10)
+    xero-ruby (2.0.3)
+      faraday (~> 1.0.1, >= 1.0.1)
+      json (~> 2.1, >= 2.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dotenv
+  haml
+  jwt
+  sinatra!
+  sinatra-contrib
+  xero-ruby
+
+BUNDLED WITH
+   2.1.2
