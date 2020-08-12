@@ -17,8 +17,10 @@ https://developer.xero.com/documentation/oauth2/scopes
 
 ### 4) Rename `sample.env` to `.env` and replace with the **4 required parameters**
 
-### 5) Run the app
+### 5) Clone & run the app
 ```bash
+$ git clone git@github.com:XeroAPI/xero-ruby-oauth2-starter.git
+$ cd xero-ruby-oauth2-starter/
 $ bundle install
 $ bundle exec ruby xero_app.rb
 ```
