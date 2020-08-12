@@ -8,13 +8,13 @@ Main Library
 > ruby 2.7
 
 # Pre-requesites
-`) Create an app in Xero's developer portal
+1) Create an app in Xero's developer portal
 > https://developer.xero.com/myapps/
 
-2) Decide what `scopes` your application needs.
+2) Decide what `scopes` your application needs
 > https://developer.xero.com/documentation/oauth2/scopes
 
-3) Rename `sample.env` to `.env` and replace with the **4 required parameters**.
+3) Rename `sample.env` to `.env` and replace with the **4 required parameters**
 
 # run the app
 $ bundle install
