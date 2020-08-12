@@ -52,3 +52,6 @@ end
 ```
 
 Checkout `xero_app.rb` for all the sample code you need to get started for your own app
+
+## App Walkthrough
+![walkthrough](./public/images/xero-ruby-getting-started.gif)
