@@ -1,28 +1,31 @@
-This is a very basic [Sinatra](https://github.com/sinatra/sinatra) app showing how to get started with Xero's oficially supported Ruby SDK to access their API's
-*Sinatra is a DSL (Domain Specific Language) for quickly creating web applications in Ruby with minimal effort*
+This is a basic application showing how to get started with the Xero's official [xero-ruby](https://github.com/XeroAPI/xero-ruby) SDK
 
-Main Library
-> [xero-ruby](https://github.com/XeroAPI/xero-ruby)
+*It uses [Sinatra](https://github.com/sinatra/sinatra) which is a DSL for creating simple web applications in Ruby with minimal effort*
 
-# Requirements
-> ruby 2.7
+# Getting Started
+### 1) Make sure you have at least Ruby 2.7 [installed](https://www.ruby-lang.org/en/documentation/installation/)
+```bash
+ruby -v
+ruby 2.7.0
+```
 
-# Pre-requesites
-1) Create an app in Xero's developer portal
-> https://developer.xero.com/myapps/
+### 2) Create an app in Xero's developer portal
+https://developer.xero.com/myapps/
 
-2) Decide what `scopes` your application needs
-> https://developer.xero.com/documentation/oauth2/scopes
+### 3) Decide what `scopes` your application needs
+https://developer.xero.com/documentation/oauth2/scopes
 
-3) Rename `sample.env` to `.env` and replace with the **4 required parameters**
+### 4) Rename `sample.env` to `.env` and replace with the **4 required parameters**
 
-# run the app
+### 5) Run the app
 ```bash
 $ bundle install
 $ bundle exec ruby xero_app.rb
 ```
 
-Visit `http://localhost:4567/` and start exploring the code 🥳
+> Visit `http://localhost:4567/` and start exploring the code in your editor of choice 🥳
+
+----
 
 ## Sample getting started code
 Setting up and connecting to the XeroAPI with the `xero-ruby` SDK is simple
@@ -37,7 +40,6 @@ def xero_client
   }
   XeroRuby::ApiClient.new(credentials: creds)
 end
-
 
 get '/auth' do
   redirect to(xero_client.authorization_url)
