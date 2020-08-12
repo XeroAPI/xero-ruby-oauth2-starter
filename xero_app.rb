@@ -21,6 +21,13 @@ helpers do
   end
 end
 
+before do
+  pass if request.path_info == '/auth/callback'
+  if (request.path_info != '/' && session[:token_set].nil?)
+    redirect to('/')
+  end
+end
+
 get '/' do
   @token_set = session[:token_set]
   @auth_url = xero_client.authorization_url
@@ -43,6 +50,7 @@ end
 get '/auth/callback' do
   @token_set = xero_client.get_token_set_from_callback(params)
   session[:token_set] = @token_set
+  puts "SET session[:token_set]::::: #{session[:token_set]}"
   redirect to('/')
 end
 
