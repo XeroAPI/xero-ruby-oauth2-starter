@@ -17,8 +17,10 @@ Main Library
 3) Rename `sample.env` to `.env` and replace with the **4 required parameters**
 
 # run the app
+```bash
 $ bundle install
 $ bundle exec ruby xero_app.rb
+```
 
 Visit `http://localhost:4567/` and start exploring the code 🥳
 
