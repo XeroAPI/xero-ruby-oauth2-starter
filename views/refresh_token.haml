@@ -1,9 +1,9 @@
 - if @id_token
   %h2 Decoded ID Token
-  = @id_token
+  %pre= @id_token.pretty_inspect
 - if @access_token
   %h2 Decoded Access Token
-  = @access_token
+  %pre= @access_token.pretty_inspect
 - if @token_set
   %h2 Rest of token_set
   %strong expires_in:
@@ -13,8 +13,8 @@
   %span= @token_set["token_type"]
   %hr
   %strong refresh_token:
-  %span= @token_set["refresh_token"]
+  %code= @token_set["refresh_token"]
   %hr
   %strong scope:
-  %span= @token_set["scope"]
+  %code= @token_set["scope"]
   %hr
