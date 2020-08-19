@@ -33,24 +33,21 @@ $ bundle exec ruby xero_app.rb
 Setting up and connecting to the XeroAPI with the `xero-ruby` SDK is simple
 
 ```ruby
-def xero_client
-  creds = {
-    client_id: ENV['CLIENT_ID'],
-    client_secret: ENV['CLIENT_SECRET'],
-    redirect_uri: 'http://localhost:4567/auth/callback',
-    scopes: ENV['SCOPES']
-  }
-  XeroRuby::ApiClient.new(credentials: creds)
-end
+@@xero_client = XeroRuby::ApiClient.new(credentials: {
+  client_id: ENV['CLIENT_ID'],
+  client_secret: ENV['CLIENT_SECRET'],
+  redirect_uri: 'http://localhost:4567/auth/callback',
+  scopes: ENV['SCOPES']
+})
 
 get '/auth' do
-  redirect to(xero_client.authorization_url)
+  redirect to(@@xero_client.authorization_url)
 end
 
 get '/auth/callback' do
-  xero_client.get_token_set_from_callback(params)
-  tenant_id = xero_client.connections.last['tenantId']
-  @invoices = xero_client.accounting_api.get_invoices(tenant_id).invoices
+  @@xero_client.get_token_set_from_callback(params)
+  tenant_id = @@xero_client.connections.last['tenantId']
+  @invoices = @@xero_client.accounting_api.get_invoices(tenant_id).invoices
 end
 ```
 
