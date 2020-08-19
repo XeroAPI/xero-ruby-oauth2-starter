@@ -21,8 +21,8 @@ CREDENTIALS = {
   scopes: ENV['SCOPES']
 }
 
-# We initialise an instance of the Xero API Client here so we can
-# make calls to the API later.
+# We initialise an instance of the Xero API Client here so we can make calls
+# to the API later. Memoization `||=`` will return a previously initialized client.
 helpers do
   def xero_client
     @xero_client ||= XeroRuby::ApiClient.new(credentials: CREDENTIALS)
