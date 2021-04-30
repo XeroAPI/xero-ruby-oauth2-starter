@@ -40,7 +40,7 @@ Setting up and connecting to the XeroAPI with the `xero-ruby` SDK is simple
 @xero_client = XeroRuby::ApiClient.new(credentials: {
   client_id: ENV['CLIENT_ID'],
   client_secret: ENV['CLIENT_SECRET'],
-  redirect_uri: 'http://localhost:4567/auth/callback',
+  redirect_uri: 'http://localhost:4567/callback',
   scopes: ENV['SCOPES']
 })
 

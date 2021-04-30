@@ -34,7 +34,7 @@ end
 # If we don't, then redirect to the index page to prompt
 # the user to go through the OAuth 2.0 authorization flow.
 before do
-  pass if request.path_info == '/auth/callback'
+  pass if request.path_info == '/callback'
   if (request.path_info != '/' && session[:token_set].nil?)
     redirect to('/')
   end
@@ -58,7 +58,7 @@ end
 
 # This endpoint is used to handle the redirect from the
 # Xero OAuth 2.0 authorisation process
-get '/auth/callback' do
+get '/callback' do
   @token_set = xero_client.get_token_set_from_callback(params)
   session[:token_set] = @token_set
   redirect to('/')
