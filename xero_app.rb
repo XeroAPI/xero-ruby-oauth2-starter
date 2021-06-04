@@ -122,3 +122,9 @@ get '/organisation' do
   @organisations = xero_client.accounting_api.get_organisations(xero_client.connections[0]['tenantId']).organisations
   haml :organisation
 end
+
+get '/reports' do
+  xero_client.set_token_set(session[:token_set])
+  @reports = xero_client.accounting_api.get_report_ba_sor_gst_list(xero_client.connections[0]['tenantId']).reports
+  haml :reports
+end
