@@ -6,6 +6,7 @@ require 'sinatra/reloader' if development?
 require 'xero-ruby'
 require 'securerandom'
 require 'dotenv/load'
+require 'byebug'
 require 'jwt'
 require 'pp'
 
@@ -111,7 +112,9 @@ end
 # This endpoint shows invoice data via the 'invoices.haml' view.
 get '/invoices' do
   xero_client.set_token_set(session[:token_set])
-  @invoices = xero_client.accounting_api.get_invoices(xero_client.connections[0]['tenantId']).invoices
+
+  tenant_id=xero_client.connections[0]['tenantId']
+  @invoices = xero_client.accounting_api.get_invoices(tenant_id).invoices
   haml :invoices
 end
 
@@ -119,7 +122,8 @@ end
 # in the xero_client.connections array.
 get '/organisation' do
   xero_client.set_token_set(session[:token_set])
-  @organisations = xero_client.accounting_api.get_organisations(xero_client.connections[0]['tenantId']).organisations
+  tenant_id=xero_client.connections[0]['tenantId']
+  @organisations = xero_client.accounting_api.get_organisations(tenant_id).organisations
   haml :organisation
 end
 
