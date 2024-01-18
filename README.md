@@ -3,10 +3,10 @@ This is a basic application showing how to get started with the Xero's official 
 *It uses [Sinatra](https://github.com/sinatra/sinatra) which is a DSL for creating simple web applications in Ruby with minimal effort*
 
 # Getting Started
-### 1) Make sure you have at least Ruby 2.7 [installed](https://www.ruby-lang.org/en/documentation/installation/)
+### 1) This app is tested with Ruby [3.3.0](https://www.ruby-lang.org/en/documentation/installation/)
 ```bash
 ruby -v
-ruby 2.7.0
+ruby 3.3.0
 ```
 
 ### 2) Create an app in Xero's developer portal
